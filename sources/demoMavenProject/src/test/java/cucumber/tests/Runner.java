@@ -10,14 +10,15 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 @CucumberOptions(
-        features = { "C:\\Users\\VIVAS\\IdeaProjects\\demoMavenProject\\src\\test\\java\\cucumber\\features\\" },
+        features = { "\\demoMavenProject\\src\\test\\java\\cucumber\\features\\" },
         glue = { "cucumber.steps" })
 public class Runner extends BaseSetup {
     private TestNGCucumberRunner testNGCucumberRunner;
 
     @BeforeClass(alwaysRun = true)
     public void setUpClass() throws Exception {
-        initialization();
+        initialization("4723", "1");
+        //initialization("5000", "2");
         testNGCucumberRunner = new TestNGCucumberRunner(this.getClass());
     }
 

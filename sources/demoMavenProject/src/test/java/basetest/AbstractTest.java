@@ -13,7 +13,7 @@ import org.testng.Reporter;
 
 import java.util.Random;
 
-public class AbstractTest extends BaseSetup{
+public class AbstractTest extends BaseSetup {
     public static WebElement webElement;
     public static WebDriverWait wait;
 

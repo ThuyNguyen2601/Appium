@@ -29,19 +29,25 @@ public class BaseSetup {
         }
     }
 
-    public void initialization() throws MalformedURLException {
+    public AndroidDriver initialization(String port, String deviceNo) throws MalformedURLException {
         String plateFormName = properties.getProperty("android.platform");
-        String deviceName = properties.getProperty("android.device.name");
+        String deviceName = properties.getProperty("android.device.name" + deviceNo);
         String appLocation = properties.getProperty("android.app.location");
-        String appName = properties.getProperty("android.app.name");
-        String appFullName = appLocation + appName;
-        String url = properties.getProperty("appium.server.url");
+        //String appName = properties.getProperty("android.app.name");
+        //String appFullName = appLocation + appName;
+        String packageName = properties.getProperty("android.app.packageName");
+        String activity = properties.getProperty("android.app.activityName");
+        String url = properties.getProperty("http://0.0.0.0:" + port + "/wd/hub");
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability("platformName", plateFormName);
         cap.setCapability("deviceName", deviceName);
-        cap.setCapability("app", appFullName);
+        cap.setCapability("appPackage", packageName);
+        cap.setCapability("appActivity", activity);
+        //cap.setCapability("app", appFullName);
 
         driver = new AndroidDriver(new URL(url), cap);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        
+        return driver;
     }
 }

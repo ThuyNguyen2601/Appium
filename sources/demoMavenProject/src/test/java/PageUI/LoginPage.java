@@ -14,59 +14,34 @@ public class LoginPage extends AbstractTest {
     public LoginPage(AndroidDriver driver) {
         super(driver);
     }
-
-    @FindBy(id = "phone_prefix")
-    private WebElement phonePrefix;
-
-    @FindBy(id = "android:id/text1")
-    private WebElement suggestPhoneNumber;
-
-    @FindBy(id = "phone_number")
-    private WebElement phoneNumber;
-
-    @FindBy(id = "continue_")
-    private WebElement continueButton;
+    
+    @FindBy(id = "com.vnpt.tnvn:id/imgAvartar")
+    private WebElement avatar;
+    
+    @FindBy(id = "username")
+    private WebElement userName;
 
     @FindBy(id = "password")
-    private WebElement passWord;
+    private WebElement password;
 
-    @FindBy(id = "login")
+
+    @FindBy(id = "btnLoginUsername")
     private WebElement loginButton;
 
-    @FindBy(id = "android:id/button1")
-    private WebElement button1;
 
-    @FindBy(xpath = "//android.widget.Button[@text='ĐÓNG']")
-    private WebElement OKButton;
+    public BasePage login(String userNameTxt, String passwordTxt){
+    	waitForElementClickable(avatar);
+        clickToElement(avatar);
 
-    @FindBy(xpath = "//android.widget.TextView[@text='Nguyen Thi Thuy, huybq, Mr Ngoc, rrddxx']")
-    private WebElement conversationName;
+        waitForElementClickable(userName);
+        sendKeyToElement(userName, userNameTxt);
 
-    public BasePage login(String phonePrefixTxt, String phoneNumberTxt, String password){
-        //waitForElementVisible(phonePrefix);
-        //sendKeyToElement(phonePrefix, phonePrefixTxt);
-
-        waitForElementVisible(suggestPhoneNumber);
-        clickToElement(suggestPhoneNumber);
-
-        //waitForElementVisible(phoneNumber);
-        clearToElement(phoneNumber);
-        sendKeyToElement(phoneNumber, phoneNumberTxt);
-
-        waitForElementClickable(continueButton);
-        clickToElement(continueButton);
-
-        waitForElementVisible(passWord);
-        sendKeyToElement(passWord, password);
+        waitForElementVisible(password);
+        sendKeyToElement(password, passwordTxt);
 
         waitForElementClickable(loginButton);
         clickToElement(loginButton);
 
-        waitForElementClickable(button1);
-        clickToElement(button1);
-
-        waitForElementClickable(OKButton);
-        clickToElement(OKButton);
 
         return PageGeneratorManager.getBasePage();
     }
