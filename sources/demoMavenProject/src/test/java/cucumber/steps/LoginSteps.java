@@ -17,7 +17,7 @@ public class LoginSteps {
     BasePage basePage;
 
     String userNameTxt = "941912591";
-    String passwordTxt = "Thuynt!123";
+    String passwordTxt = "Thuynt@123";
 
     @Then("^user logins to app with correct account$")
     public void user_logins_to_app_with_correct_account(){

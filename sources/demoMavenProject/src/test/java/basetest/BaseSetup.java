@@ -29,7 +29,7 @@ public class BaseSetup {
         }
     }
 
-    public AndroidDriver initialization(String port, String deviceNo) throws MalformedURLException {
+    public void initialization(String port, String deviceNo) throws MalformedURLException {
         String plateFormName = properties.getProperty("android.platform");
         String deviceName = properties.getProperty("android.device.name" + deviceNo);
         String appLocation = properties.getProperty("android.app.location");
@@ -48,6 +48,6 @@ public class BaseSetup {
         driver = new AndroidDriver(new URL(url), cap);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         
-        return driver;
+        //return driver;
     }
 }
