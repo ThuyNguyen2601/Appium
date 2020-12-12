@@ -11,8 +11,9 @@ import org.testng.annotations.Test;
 
 
 @CucumberOptions(
-features = "src/test/java/Features"
-,glue= {"Steps"}, dryRun = true
+features = "src//test//java//Features//",
+glue= {"src//test//java//Steps"},
+dryRun = true
 )
 public class TestRunner {
 
