@@ -1,11 +1,11 @@
 
 Feature: Login Feature
 	
-  Scenario: Login as a authenticated user
-    Then user is  on homepage
-    Then user navigates to Login Page
-    And user enters username and Password
-    And success message is displayed
+ #Scenario: Login as a authenticated user
+    #Then user is  on homepage
+   # Then user navigates to Login Page
+   # And user enters username and Password
+   # And success message is displayed
     
   Scenario: 2 user login on 2 devices
     Then user A is  on homepage
