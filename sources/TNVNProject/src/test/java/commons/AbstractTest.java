@@ -14,6 +14,11 @@ public class AbstractTest extends SetupBase {
 	public WebDriverWait wait;
 	public WebElement webElement;
 	
+	public AbstractTest(AndroidDriver driver) {
+		this.driver = driver;
+		wait = new WebDriverWait(this.driver, 30);
+	}
+	
 	public int randomData() {
 		Random random = new Random();
 		return random.nextInt(99999);

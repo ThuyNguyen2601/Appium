@@ -1,10 +1,11 @@
 package Steps;
 
 import cucumber.api.java.en.Then;
+import io.appium.java_client.android.AndroidDriver;
 import pageObject.HomePageObj;
 
 public class LoginSteps {
-	HomePageObj homePageObj = new HomePageObj();
+	HomePageObj homePageObj;
 	
 	@Then("^user is  on homepage$")
 	public void user_is_on_homepage() throws Throwable {

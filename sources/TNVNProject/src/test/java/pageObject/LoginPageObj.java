@@ -8,10 +8,12 @@ import pageUI.LoginPageUI;
 public class LoginPageObj extends AbstractTest{
 	LoginPageUI loginPageUI = new LoginPageUI();
 	
-	public LoginPageObj() {
-		
-	}
 	
+	public LoginPageObj(AndroidDriver driver) {
+		super(driver);
+		// TODO Auto-generated constructor stub
+	}
+
 	public AndroidDriver driverFirst = initialization("4723", "1");
 	public AndroidDriver driverSecond = initialization("4724", "2");
 	
