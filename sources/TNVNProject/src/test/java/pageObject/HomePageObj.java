@@ -9,6 +9,10 @@ import pageUI.HomePageUI;
 public class HomePageObj extends AbstractTest {
 	HomePageUI homePageUI = new HomePageUI();
 	
+	public HomePageObj() {
+		
+	}
+	
 	public AndroidDriver driverFirst = initialization("4723", "1");
 	public AndroidDriver driverSecond = initialization("4724", "2");
 	

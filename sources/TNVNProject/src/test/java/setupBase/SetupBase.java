@@ -19,8 +19,8 @@ public class SetupBase {
 	public SetupBase() {
 		try {
 			properties = new Properties();
-			String pathConfigure = Paths.get(".").normalize().toAbsolutePath().toString() + "\\src\\main\\configure";
-			Path propPath = Paths.get(pathConfigure, "config.properties");
+			String pathConfigure = Paths.get(".").normalize().toAbsolutePath().toString() + "src\\test\\java\\configure\\";
+			Path propPath = Paths.get(pathConfigure, "configủe.properties");
 			String propString = propPath.toAbsolutePath().toString();
 			FileInputStream fis = new FileInputStream(propString);
 			properties.load(fis);
