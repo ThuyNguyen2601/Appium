@@ -1,11 +1,15 @@
 package Steps;
 
+import commons.PageGeneratorManager;
 import cucumber.api.java.en.Then;
-import io.appium.java_client.android.AndroidDriver;
 import pageObject.HomePageObj;
 
 public class LoginSteps {
-	HomePageObj homePageObj;
+	private HomePageObj _homePageObj;
+	
+	public LoginSteps() throws Exception {
+		_homePageObj = PageGeneratorManager.getHomePageObj();
+	}
 	
 	@Then("^user is  on homepage$")
 	public void user_is_on_homepage() throws Throwable {
@@ -29,12 +33,13 @@ public class LoginSteps {
 
 	@Then("^user A is  on homepage$")
 	public void user_A_is_on_homepage() throws Throwable {
-		homePageObj.userAClickToAvatar();
+		System.out.println("user A is  on homepage");
+		_homePageObj.userAClickToAvatar();
 	}
 
 	@Then("^user B is  on homepage$")
 	public void user_B_is_on_homepage() throws Throwable {
-		homePageObj.userBClickToAvatar();
+		_homePageObj.userBClickToAvatar();
 	}
 
 	@Then("^user A navigates to Login Page$")

@@ -10,18 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.appium.java_client.android.AndroidDriver;
 import setupBase.SetupBase;
 
-public class AbstractTest extends SetupBase {
-	public WebDriverWait wait;
-	public WebElement webElement;
-	
-	public AbstractTest(AndroidDriver driver) {
-		this.driver = driver;
-		wait = new WebDriverWait(this.driver, 30);
-	}
-	
+public class AbstractTest extends SetupBase {	
+
 	public int randomData() {
-		Random random = new Random();
-		return random.nextInt(99999);
+		return new Random().nextInt(99999);
 	}
 
 	public void tearDown(AndroidDriver driver) {
@@ -39,11 +31,14 @@ public class AbstractTest extends SetupBase {
 	public boolean isControlEnabled(WebElement element) {
 		return element.isEnabled();
 	}
+	
+	public WebElement GetWebElement(AndroidDriver driver, By byElement) {
+		return driver.findElement(byElement);
+	}
 
 	public void sendKeyToElement(AndroidDriver driver, By byElement, String value) {
-		WebElement element = driver.findElement(byElement);
-		waitForElementVisible(driver, element);
-		element.sendKeys(value);
+		WebElement elementFound = driver.findElement(byElement);
+		sendKeyToElement(driver, elementFound, value);
 	}
 	
 	public void sendKeyToElement(AndroidDriver driver, WebElement webElement, String value) {
@@ -52,9 +47,8 @@ public class AbstractTest extends SetupBase {
 	}
 	
 	public void clickToElement(AndroidDriver driver, By byElement) {
-		WebElement element = driver.findElement(byElement);
-		waitForElementClickable(driver, element);
-		element.click();
+		WebElement elementFound = driver.findElement(byElement);
+		clickToElement(driver, elementFound);
 	}
 
 	public void clickToElement(AndroidDriver driver, WebElement element) {
@@ -63,9 +57,8 @@ public class AbstractTest extends SetupBase {
 	}
 	
 	public void clearToElement(AndroidDriver driver, By byElement) {
-		WebElement element = driver.findElement(byElement);
-		waitForElementVisible(driver, element);
-		element.clear();
+		WebElement elementFound = driver.findElement(byElement);
+		clearToElement(driver, elementFound);
 	}
 
 	public void clearToElement(AndroidDriver driver, WebElement element) {
@@ -74,9 +67,8 @@ public class AbstractTest extends SetupBase {
 	}
 	
 	public void checkTheCheckbox(AndroidDriver driver, By byElement) {
-		WebElement element = driver.findElement(byElement);
-		waitForElementVisible(driver, element);
-		element.click();
+		WebElement elementFound = driver.findElement(byElement);
+		checkTheCheckbox(driver, elementFound);
 	}
 
 	public void checkTheCheckbox(AndroidDriver driver, WebElement element) {
@@ -84,26 +76,33 @@ public class AbstractTest extends SetupBase {
 		element.click();
 	}
 	
-	public void waitForElementVisible(AndroidDriver driver, By byElement) {
-		WebElement element = driver.findElement(byElement);
-		wait = new WebDriverWait(driver, 30);
-		webElement = wait.until(ExpectedConditions.visibilityOf(element));
+	public WebElement waitForElementVisible(AndroidDriver driver, By byElement) {
+		WebElement elementFound = driver.findElement(byElement);
+				
+		return waitForElementVisible(driver, elementFound);
 	}
 
-	public void waitForElementVisible(AndroidDriver driver, WebElement element) {
-		wait = new WebDriverWait(driver, 30);
-		webElement = wait.until(ExpectedConditions.visibilityOf(element));
+	public WebElement waitForElementVisible(AndroidDriver driver, WebElement element) {
+		WebElement webElementFound = GetWebDriverWait(driver, 30)
+				.until(ExpectedConditions.visibilityOf(element));
+		
+		return webElementFound;
 	}
 	
-	public void waitForElementClickable(AndroidDriver driver, By byElement) {
-		WebElement element = driver.findElement(byElement);
-		wait = new WebDriverWait(driver, 30);
-		webElement = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+	public WebElement waitForElementClickable(AndroidDriver driver, By byElement) {
+		WebElement elementFound = driver.findElement(byElement);
+		
+		return waitForElementClickable(driver, elementFound);
 	}
 
-	public void waitForElementClickable(AndroidDriver driver, WebElement element) {
-		wait = new WebDriverWait(driver, 30);
-		webElement = wait.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+	public WebElement waitForElementClickable(AndroidDriver driver, WebElement element) {
+		WebElement webElementFound = GetWebDriverWait(driver, 30)
+				.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(element)));
+		
+		return webElementFound;
 	}
 
+	private WebDriverWait GetWebDriverWait(AndroidDriver driver, long timeInSecond) {
+		return new WebDriverWait(driver, timeInSecond);
+	}
 }
