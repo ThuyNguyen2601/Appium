@@ -1,0 +1,10 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC
+J
+java:S3740"/Provide the parametrized type for this generic.(°Íö¬üÿÿÿÿ
+U
+java:S1128"?Remove this unused import 'io.appium.java_client.MobileDriver'.(¾Å»¶
+V
+java:S1128";Remove this unused import 'org.openqa.selenium.WebElement'.(‰ïµ”þÿÿÿÿ
+Z
+java:S1128"?Remove this unused import 'org.openqa.selenium.support.FindBy'.(¶º´éùÿÿÿÿ

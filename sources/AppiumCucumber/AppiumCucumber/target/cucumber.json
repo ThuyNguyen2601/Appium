@@ -1,0 +1,152 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-12-16T08:54:42.141Z",
+        "line": 21,
+        "name": "demo data table using list of map",
+        "description": "",
+        "id": "tên-feature;demo-data-table-using-list-of-map",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "error_message": "java.lang.NullPointerException\r\n\tat def.StepDifinition.tôi_đóng_popup(StepDifinition.java:50)\r\n\tat ✽.tôi đóng popup(file:///C:/Users/hainv26/Downloads/AppiumCucumber%203/AppiumCucumber/src/test/resources/feature/datatable.feature:24)\r\n",
+              "duration": 5000000,
+              "status": "failed"
+            },
+            "line": 24,
+            "name": "tôi đóng popup",
+            "match": {
+              "location": "def.StepDifinition.tôi_đóng_popup()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 25,
+            "name": "click vào menu \"API Demos\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"API Demos\"",
+                  "offset": 15
+                }
+              ],
+              "location": "def.StepDifinition.clickVàoMenuMenu(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 26,
+            "name": "click vào menu \"Text\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Text\"",
+                  "offset": 15
+                }
+              ],
+              "location": "def.StepDifinition.clickVàoMenuMenu(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 27,
+            "name": "click vào menu \"LogTextBox\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"LogTextBox\"",
+                  "offset": 15
+                }
+              ],
+              "location": "def.StepDifinition.clickVàoMenuMenu(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1000000,
+              "status": "skipped"
+            },
+            "line": 28,
+            "name": "click two time to add button using list of map",
+            "match": {
+              "location": "def.StepDifinition.clickTwoTimeToAddButtonUsingListOfMap(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Button Name"
+                ]
+              },
+              {
+                "cells": [
+                  "ADD"
+                ]
+              },
+              {
+                "cells": [
+                  "ADD"
+                ]
+              },
+              {
+                "cells": [
+                  "ADD"
+                ]
+              },
+              {
+                "cells": [
+                  "ADD"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 35,
+            "name": "I see 5 row added",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 6
+                }
+              ],
+              "location": "def.StepDifinition.iSeeRowAdded(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@e2e,"
+          },
+          {
+            "name": "@tc1"
+          }
+        ]
+      }
+    ],
+    "name": "tên feature",
+    "description": "  aaaa",
+    "id": "tên-feature",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/feature/datatable.feature",
+    "tags": []
+  }
+]
