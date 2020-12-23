@@ -1,18 +1,14 @@
 
 Feature: Login Feature
-	
- #Scenario: Login as a authenticated user
-    #Then user is  on homepage
-   # Then user navigates to Login Page
-   # And user enters username and Password
-   # And success message is displayed
-    
+  @Normal  
   Scenario: 2 user login on 2 devices
-    Then user A is  on homepage
-    And user B is  on homepage
-    And user A navigates to Login Page
-    And user B navigates to Login Page
-    And user A enters username and Password
-    And user B enters username and Password
-    Then success message is displayed with user A
-    Then success message is displayed with user B
+    Then user A login with valid username and password
+    And user B login with valid username and password
+    And success message is displayed with user A
+    And success message is displayed with user B
+  
+  @OTP  
+  Scenario: login by OTP
+  Then user A click to OTP button
+  And user A enter phone number and click to confirm button
+  And user A enter otp code and click to confirm button

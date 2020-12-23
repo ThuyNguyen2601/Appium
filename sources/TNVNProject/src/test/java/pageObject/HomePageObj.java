@@ -1,11 +1,11 @@
 package pageObject;
 
-import org.openqa.selenium.By;
-
 import commons.AbstractTest;
 import io.appium.java_client.android.AndroidDriver;
+
+import org.openqa.selenium.WebDriver;
+
 import pageUI.HomePageUI;
-import pageUI.LoginPageUI;
 
 public class HomePageObj extends AbstractTest {
 
@@ -18,11 +18,12 @@ public class HomePageObj extends AbstractTest {
 		homePageUI = new HomePageUI();
 
 		driverFirst = super.initialization("4723", "1");
-		driverSecond = super.initialization("4724", "2");
+		//driverSecond = super.initialization("4724", "2");
 	}
 
-	public void userAClickToAvatar() {
+	public void userAClickToAvatar() throws Exception {
 		waitForElementVisible(driverFirst, homePageUI.avaterImageElement);
+		//Thread.sleep(5000);
 		clickToElement(driverFirst, homePageUI.avaterImageElement);
 	}
 
@@ -30,4 +31,6 @@ public class HomePageObj extends AbstractTest {
 		waitForElementVisible(driverSecond, homePageUI.avaterImageElement);
 		clickToElement(driverSecond, homePageUI.avaterImageElement);
 	}
+	
+	
 }

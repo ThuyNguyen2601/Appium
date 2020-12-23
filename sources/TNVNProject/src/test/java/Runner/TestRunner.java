@@ -9,7 +9,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 		features = "src/test/java/Features",
 		glue= {"Steps"}//,
 		//dryRun = true
-		)
+		,tags = {"@OTP"})
 public class TestRunner extends AbstractTestNGCucumberTests {
 
 }

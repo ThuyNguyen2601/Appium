@@ -8,10 +8,13 @@ import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.appmanagement.*;
+import io.appium.java_client.remote.MobileCapabilityType;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import io.appium.java_client.android.AndroidDriver;
 
 public class SetupBase {
 	private Properties properties;
@@ -34,21 +37,28 @@ public class SetupBase {
 		try {
 			String plateFormName = properties.getProperty("android.platform");
 			String deviceName = properties.getProperty("android.device.name" + deviceNo);
-			String appLocation = properties.getProperty("android.app.location");
 			String packageName = properties.getProperty("android.app.packageName");
 			String activity = properties.getProperty("android.app.activityName");
-			//String url = properties.getProperty("http://0.0.0.0:" + port + "/wd/hub");
-			String url = "http://0.0.0.0:" + port + "/wd/hub";
+		
+			String url = "http://localhost:" + port + "/wd/hub";
 			System.out.println(url);
 			DesiredCapabilities cap = new DesiredCapabilities();
 			cap.setCapability("platformName", plateFormName);
+			cap.setCapability("automationName", "UiAutomator2");
 			cap.setCapability("deviceName", deviceName);
-			cap.setCapability("appPackage", packageName);
-			cap.setCapability("appActivity", activity);
+			//cap.setCapability(MobileCapabilityType.APP, "D:\\ThuyNT\\Sources\\github.com\\Appium\\sources\\TNVNProject\\src\\test\\java\\resources\\Digilife-Staging-14122020-1.1.11.apk");
+			
+			cap.setCapability("appWaitPackage", packageName);
+			//System.out.println(packageName);
+			cap.setCapability("appWaitActivity", activity);
+			//System.out.println(activity);
+			cap.setCapability("noReset", "false");
+			cap.setCapability("autoGrantPermissions", true);
+			cap.setCapability("autoAcceptAlerts", true);
 
 			AndroidDriver driver = new AndroidDriver(new URL(url), cap);
 			
-			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			
 			return driver;
 		} catch (Exception e) {
