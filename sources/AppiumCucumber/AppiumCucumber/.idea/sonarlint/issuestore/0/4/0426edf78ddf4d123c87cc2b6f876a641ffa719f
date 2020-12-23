@@ -1,0 +1,18 @@
+
+n	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(š¢òC
+M	java:S106a"9Replace this use of System.out or System.err by a logger.(«‘éK
+N	java:S106q"9Replace this use of System.out or System.err by a logger.(¶×ËÅ
+Q	java:S125%"<This block of commented-out lines of code should be removed.(Ëµ¡¥
+S	java:S106~"9Replace this use of System.out or System.err by a logger.(…›Ëšşÿÿÿÿ
+S	java:S106f"9Replace this use of System.out or System.err by a logger.(Ó¦˜Óøÿÿÿÿ
+J
+java:S3740X"/Provide the parametrized type for this generic.(‚ˆÁÚøÿÿÿÿ
+S	java:S106Q"9Replace this use of System.out or System.err by a logger.(Ç ç•ıÿÿÿÿ
+S	java:S106]"9Replace this use of System.out or System.err by a logger.(şÏÎûÿÿÿÿ
+S	java:S106m"9Replace this use of System.out or System.err by a logger.(ßè…Çùÿÿÿÿ
+N	java:S106b"9Replace this use of System.out or System.err by a logger.(‹ˆµ¥
+S	java:S106z"9Replace this use of System.out or System.err by a logger.(å×§Åøÿÿÿÿ
+Y
+java:S1128">Remove this unused import 'jdk.nashorn.internal.ir.WhileNode'.(ïÏı‚øÿÿÿÿ
+J
+java:S3740X"/Provide the parametrized type for this generic.(‚ˆÁÚøÿÿÿÿ
